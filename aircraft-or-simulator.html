@@ -161,15 +161,49 @@
           	</div>
                     
                     
+
+                    
+					<div class="au-form-group">     
+                    <fieldset class="au-fieldset">
+                        <legend class="au-fieldset__legend">
+                            <h3 class="au-display-sm">Was training required?</h3>
+                        </legend>
+
+                        <div class="au-control-input au-control-input--block">
+                            <input class="au-control-input__input" type="radio" name="radio-ex" id="yep" value="training-yes">
+                                <label class="au-control-input__text" for="yep">Yes</label>
+                        </div>
+                        
+                        <div class="au-control-input au-control-input--block">
+                            <input class="au-control-input__input" type="radio" name="radio-ex" id="nup" value="training-no">
+                                <label class="au-control-input__text" for="nup">No</label>
+                        </div>
+
+
+                        
+                    </fieldset>
+                    </div> 
+                    
+                    
+                    				<div class="casa-section yes casa-hidden">
+							<div class="au-form-group">
+                        <label class="au-label" for="org-name">ARN of Part 141 or Part 142 Organisation</label>
+                 <input class="au-text-input au-text-input--block" name="org-name"id="org-name" type="text" value="">
+               	</div>
+                <div class="au-form-group">
+                        <label class="au-label" for="org-name">Name of Part 141 or Part 142 Organisation</label>
+                 <input class="au-text-input au-text-input--block" name="org-name"id="org-name" type="text" value="">
+               	</div>                        
+				</div>
+                    
+
+                    
 				<div class="au-form-group">
 
 								<div id="navigate" "navigate2">
 			    <a href="#" class="au-btn au-btn--primary">Next</a>          
             </div>
 					
-
-
-
 
 					
 
@@ -203,6 +237,15 @@
         }
     });
 
+                    		  $("input[name=radio-ex]").on("change", function () {
+        if ($(this).val() === "training-yes") {
+            $(".yes").removeClass("casa-hidden");
+             } else if($(this).val() === "training-no") {
+                 $(".yes").addClass("casa-hidden");
+             }
+                 
+    });
+              
  $("#navigate a"). click(function(){
 				var radioValue = $("input[name='assessed-simulator']:checked"). val();
 				window.location.href=radioValue+".html";
